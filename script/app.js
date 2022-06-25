@@ -87,7 +87,7 @@ function clickEvent() {
 // create a coundown timer
 
 function timeKeeper() {
-  let timer = 5;
+  let timer = 120; //we are using 2min of time, thats why it's start from 120 and reduce by one after every second
   const timeintv = setInterval(() => {
     timer--;
 

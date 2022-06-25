@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --background: #f9fafe;
+    --cardBackground: #fff;
+    --textColour: #232429;
+    --btnBg: #222238;
+    --borderColor: #e7ebf4;
+    --green: #86efad55;
+    --darkgren: #86efad;
+}
+
+body {
+    background-color: var(--background);
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+    margin-top: 120px;
+    padding: 20px;
+}
+
+.displayImages {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.userCard {
+    max-width: 300px;
+    background-color: var(--cardBackground);
+    border-radius: 8px;
+    margin: 10px;
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    border: 1px solid var(--borderColor);
+    box-shadow: 10px 10px 24px #eaebef, -10px -10px 24px #ffffff;
+}
+
+.userImage {
+    width: 35%;
+}
+
+.userImage img {
+    display: block;
+    min-height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin: 0;
+}
+
+.randomButton {
+    outline: none;
+    border: none;
+    padding: 15px 20px;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 4px;
+    background-color: var(--btnBg);
+    color: var(--background);
+    border: 1px solid var(--borderColor);
+    cursor: pointer;
+    margin: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+.hidePanel {
+    height: 0;
+    overflow: hidden;
+}
+
+.show {
+    height: auto;
+}
+
+.iconBox i {
+    font-size: 28px;
+    color: var(--btnBg);
+    margin: 10px;
+}
+
+.green {
+    background: var(--green);
+}
+
+.activeUsername {
+    color: var(--darkgren);
+}
+
+.countSentence {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.time {
+    font-size: 30px;
+    display: block;
+    font-weight: 600;
+    color: var(--darkgren);
+}
+
+@media only screen and (max-width: 740px) {
+    .displayImages {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+    }
+    .container {
+        margin: auto;
+        margin-top: 120px;
+    }
+    .userCard {
+        max-height: 120px;
+        overflow: hidden;
+    }
+}

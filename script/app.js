@@ -8,6 +8,9 @@ const startTime = document.getElementById(`startTime`);
 const coundown = document.getElementById(`coundown`);
 const hide = document.getElementById(`hide`);
 const tooltip = document.getElementById(`tooltip`);
+const popup = document.getElementById(`popup`);
+let nameForCount;
+let imageForCount;
 
 // rendering all the user;
 userContainer.innerHTML = `${users
@@ -36,8 +39,6 @@ userContainer.innerHTML = `${users
 
 // disable button
 
-let nameForCount;
-
 function disableButton(btn) {
   btn.style.pointerEvents = `none`;
 
@@ -51,11 +52,6 @@ function enableButton(btn) {
 let tracker = 1;
 
 function clickEvent() {
-  // if (tracker > 1) {
-  //   shoewTooltip(`Please Finised The Previous Tasks`);
-  //   disableButton(button, true);
-  // }
-
   const allElement = document.getElementsByClassName(`userCard`);
   const arr = [...allElement];
   let random = Math.floor(Math.random() * arr.length);
@@ -82,6 +78,7 @@ function clickEvent() {
   enableButton(coundown);
 
   nameForCount = textElement;
+  imageForCount = imgSRC;
 }
 
 // create a coundown timer
@@ -91,7 +88,6 @@ function timeKeeper() {
   const timeintv = setInterval(() => {
     timer--;
 
-    // dooing raff
     let min = Math.floor(timer / 60);
     let sec = timer - min * 60;
     if (min < 10) {
@@ -100,28 +96,55 @@ function timeKeeper() {
     if (sec < 10) {
       sec = `0${sec}`;
     }
+    popup.classList.add(`scale1`);
 
-    startTime.innerHTML = `<h4 class="countSentence">${nameForCount} you have <span class="time"> ${min}:${sec} </span> remaining </h4>`;
+    startTime.innerHTML = `<div class="countSentence">
+    <img class="popupImage" src="${imageForCount}" alt=""> <h3> ${nameForCount} you have <span class="time"> ${min}:${sec} </span> remaining </h3></div>`;
     if (timer < 1) {
       clearInterval(timeintv);
+
       hide.classList.remove(`show`);
+
       enableButton(button);
+
       button.innerHTML = `Choose SomeOne Else`;
       startTime.textContent = ``;
+
+      popup.classList.remove(`scale1`);
     } else {
       disableButton(coundown);
     }
   }, 1000);
-
-  console.log(tracker);
 }
 
-// ========I will work on tooltip on next weakend
-// for tooltip
-// function shoewTooltip(message) {
-//   tooltip.classList.add(`notificationVisible`);
-//   tooltip.innerHTML = message;
-// }
+// task for todat (26/06/22)
+
+// fetch a random programming related qute
+
+// add dark mood
+// if possible try to make  mindmap for it publick facebook post
 
 button.addEventListener(`click`, clickEvent);
 coundown.addEventListener(`click`, timeKeeper);
+
+// random quotes part
+
+function fetchData() {
+  fetch("https://programming-quotes-api.herokuapp.com/Quotes/random")
+    .then((res) => res.json())
+    .then((data) => {
+      const { id: quoteId, author: authourName, en: actualQuate } = data;
+
+      document.getElementById(
+        `actualData`
+      ).innerHTML = `${actualQuate} ____${authourName}`;
+    });
+}
+
+fetchData();
+
+// const moon = document.getElementById(`moon`);
+
+// moon.addEventListener(`click`, () => {
+//   document.documentElement.setAttribute("data-theme", "dark");
+// });

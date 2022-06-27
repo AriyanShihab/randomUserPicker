@@ -22,7 +22,7 @@ const users = [{
     },
     {
         id: 0003,
-        userFname: `Mr. Unknown`,
+        userFname: `Md. Sawon Ahamed`,
         userImage: `./images/profile imagte.jpg`,
         //please replace with valid adress,
         github: `https:example.com`,
@@ -31,7 +31,7 @@ const users = [{
     },
     {
         id: 0004,
-        userFname: `Mss.beutiful`,
+        userFname: `Mss. Arohee`,
         userImage: `./images/khanMasum.jpg`,
         //please replace with valid adress,
         github: `https:example.com`,
@@ -40,8 +40,17 @@ const users = [{
     },
     {
         id: 0005,
-        userFname: `Mr. Example`,
+        userFname: `Rakib S`,
         userImage: `./images/profile imagte.jpg`,
+        //please replace with valid adress,
+        github: `https:example.com`,
+        linkedin: `https:example.com`,
+        facebook: `https:example.com`,
+    },
+    {
+        id: 0004,
+        userFname: `Mss. Arohee`,
+        userImage: `./images/khanMasum.jpg`,
         //please replace with valid adress,
         github: `https:example.com`,
         linkedin: `https:example.com`,

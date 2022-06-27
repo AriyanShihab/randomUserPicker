@@ -13,34 +13,65 @@
 </head>
 
 <body>
-    <div class="container">
-        <h3>
-            This is an basic web based app for choosing random user! basically I'm creating this app for programming hero course study with some people who have some kind of similer situation like me!
-        </h3>
-        <div class="displayImages" id="userContainer"></div>
-
-        <button id="reandomButton" class="randomButton">Choose SomeOne</button>
-        <div class="randomImageHolder"></div>
-
-        <!-- active person -->
-
-        <div class="hidePanel" id="hide">
-            <div id="activePerson">
-                <div id="card"></div>
-                <div class="timer"></div>
-            </div>
-            <h3>
-                Hey,<span id="name" class="activeUsername"></span> you are selected to say something about todays topic, can we get started?
-            </h3>
-            <!-- coundown -->
-            <h2 id="startTime"></h2>
-            <button id="coundown" class="randomButton">Yes, Start Timer</button>
+    <div class="header">
+        <div class="left">
+            <h2>PH Study</h2>
         </div>
+        <div class="right">
+            <a href="https://github.com/AriyanShihab">
+                <i class="fab fa-github-square"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/ariyanshihab/">
+          <i class="fab fa-linkedin"></i
+        ></a>
+      </div>
     </div>
+
+    <div class="container">
+      <h3 class="intro">
+        This is an basic web based app for choosing random user! basically I'm
+        creating this app for programming hero course study with some people who
+        have some kind of similer situation like me!
+      </h3>
+      <div id="quote">
+        <h4 id="actualData" class="data"></h4>
+      </div>
+      <h4>List Of Feuture Rockstar:</h4>
+      <div class="displayImages" id="userContainer"></div>
+
+      <button id="reandomButton" class="randomButton">Choose SomeOne</button>
+      <div class="randomImageHolder"></div>
+
+      <!-- active person -->
+
+      <div class="hidePanel" id="hide">
+        <div id="activePerson">
+          <div id="card"></div>
+          <div class="timer"></div>
+        </div>
+        <h3>
+          Hey,<span id="name" class="activeUsername"></span> you are selected to
+          say something about todays topic, can we get started?
+        </h3>
+        <!-- coundown -->
+        <div class="popupParent" id="popup">
+          <h2 id="startTime" class="popup"></h2>
+        </div>
+
+        <button id="coundown" class="randomButton">Yes, Start Timer</button>
+      </div>
+    </div>
+
+    <footer>
+      <div class="ftr">
+        <p class="footerCredit">
+          develop by <a href="https://github.com/AriyanShihab">Ariyan Shihab</a>
+        </p>
+      </div>
+    </footer>
 
     <!-- scripts -->
     <script src="./script/data.js"></script>
     <script src="./script/app.js"></script>
-</body>
-
+  </body>
 </html>
